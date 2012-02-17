@@ -1,0 +1,54 @@
+<% content_for :head do %>
+  <%#= formtastic_stylesheet_link_tag %>
+<% end %>
+
+<% content_for :page_title do %>
+  <%= @site_page.page_title rescue '' %>
+<% end %>
+
+<div class="contact_form">
+  <%= form_for @inquiry do |form| %>
+
+  <% if @inquiry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inquiry.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @inquiry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <p><%= form.label :name %><br />
+      <%= form.text_field :name, :required => true, :label => t(:your_name) %>
+    </p>
+    <p>
+      <%= form.label :email %><br />
+      <%= form.text_field :email, :required => true,:type => :email, :label => t(:your_email), :hint => t(:type_real_mail) %>
+    </p>
+    <p>
+      <%= form.label :inquiry_type %><br />
+      <%= form.select :inquiry_type, translate_types, :required => false %>
+    </p>
+    <p>
+      <%= form.label :order_no %><br />
+      <%= form.text_field :order_no, :label => t(:number_order), :required => false %>
+    </p>
+    <p>
+      <%= form.label :message %><br />
+      <%= form.text_area :message,:required => true, :label => t(:message) %>
+    </p>
+    <p>
+      We need to make sure you're human! <br />
+      <%=  form.label :captcha_solution, "What is #{@inquiry.captcha.task}" %> = ?
+      <%= form.text_field :captcha_solution, :required => true%>
+      <%= form.hidden_field :captcha_secret %>
+    </p>
+    <p>
+      <%= form.submit 'Send', { :class => "styled-button long" } %>
+    </p>
+  <% end %>
+</div>
