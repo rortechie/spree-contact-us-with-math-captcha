@@ -1,6 +1,6 @@
 class CreateInquiries < ActiveRecord::Migration
   def self.up
-    create_table :inquiries do |t|
+    create_table :spree_inquiries do |t|
       t.string :name
       t.string :email
       t.string :inquiry_type
@@ -12,6 +12,6 @@ class CreateInquiries < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :inquiries
+    drop_table :spree_inquiries
   end
 end

@@ -2,14 +2,14 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_contact_us'
-  s.version     = '0.70.RC1'
-  s.summary     = 'Add gem summary here'
+  s.version     = '1.0.0'
+  s.summary     = 'This gem provides contact us with math captcha support'
   s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
 
-  s.author            = 'Aleхаnder Nеgоdа'
-  s.email             = 'аlехаnder.negоdа@gmail.com'
-  # s.homepage          = 'http://www.rubyonrails.org'
+  s.author            = 'Jay Rortechie'
+  s.email             = 'jay@rortechie.com'
+  # s.homepage          = 'http://www.rortechie.com'
   # s.rubyforge_project = 'actionmailer'
 
   #s.files         = `git ls-files`.split("\n")

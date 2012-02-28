@@ -2,8 +2,8 @@ class ContactUsAbilityDecorator
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Inquiry
-    can :index, Inquiry
-    can :create, Inquiry
+    can :read, Spree::Inquiry
+    can :index, Spree::Inquiry
+    can :create, Spree::Inquiry
   end
 end

@@ -1,4 +1,4 @@
-class InquiryMailer < ActionMailer::Base
+class Spree::InquiryMailer < ActionMailer::Base
 
   def notification(inquiry, resend=false)
     @inquiry = inquiry
